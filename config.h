@@ -62,6 +62,7 @@ static const Rule rules[] = {
 	{"st",          NULL,       NULL,       0,              0,          1,          0,          -1},
 	{"kitty",       NULL,       NULL,       0,              0,          1,          0,          -1},
 	{NULL,          NULL,       "EventTester",0,            0,          0,          1,          -1},/*xev*/
+    {"libreoffice", NULL,      NULL,       0,              0,          0,          1,          -1},
 };
 
 /* layout(s) */
