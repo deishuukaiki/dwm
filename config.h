@@ -120,7 +120,7 @@ static char dmenumon[2] = "1"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run_history", "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_sel, "-sf", col_fg, NULL };
 static const char *dmenutodocmd[] = { "dmenu_todo", "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_sel, "-sf", col_fg, NULL };
 static const char *dmenuxmms2cmd[] = { "dmenu_xmms2", "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_sel, "-sf", col_fg, NULL };
-static const char *dmenukeepassxccmd[] = { "dmenu_keepassxc", "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_sel, "-sf", col_fg, NULL };
+static const char *dmenupassmenu2cmd[] = { "dmenu_passmenu2", "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_sel, "-sf", col_fg, NULL };
 
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "kitty", "-o", "initial_window_height=480", "-o", "initial_window_width=640", "--class", scratchpadname, "--title", scratchpadname, NULL };
@@ -148,7 +148,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_a,      spawn,          {.v = dmenutodocmd } },
 	{ MODKEY,                       XK_s,      spawn,          {.v = dmenuxmms2cmd } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_f,      spawn,          {.v = dmenukeepassxccmd } },
+	{ MODKEY,                       XK_f,      spawn,          {.v = dmenupassmenu2cmd } },
 	{ MODKEY,			            XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,		        XK_Return, spawn,          {.v = browsercmd } },
 	{ MODKEY,			            XK_u,	   spawn,	   {.v = pulsemixercmd } },
