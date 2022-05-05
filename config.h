@@ -95,9 +95,9 @@ static const Layout layouts[] = {
 
 static const MonitorRule monrules[] = {
 	/* monitor  tag  layout  mfact  nmaster  showbar  topbar */
-	{  0,       -1,  2,      -1,    -1,      -1,      -1     }, // use a different layout for the second monitor
+	{  0,       -1,  0,      -1,    -1,      -1,      -1     }, // use a different layout for the second monitor
 	{  1,       -1,  5,      -1,    -1,      -1,      -1     }, // use a different layout for the second monitor
-	{  2,       -1,  2,      -1,    -1,      -1,      -1     }, // use a different layout for the second monitor
+	{  2,       -1,  0,      -1,    -1,      -1,      -1     }, // use a different layout for the second monitor
 	{  -1,      -1,  0,      -1,    -1,      -1,      -1     }, // default
 };
 
@@ -181,10 +181,14 @@ static Key keys[] = {
 	/* TAGKEYS(                        XK_8,                      7) */
 	/* TAGKEYS(                        XK_9,                      8) */
 
-	/* mfact, gaps, bar */
+	/* cfacts, mfacts, gaps, bar */
 
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_BackSpace,setmfact,     {.f =  0.00} },
+	{ MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
+	{ MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
+	{ MODKEY|ShiftMask,             XK_BackSpace,setcfact,     {.f =  0.00} },
 
 	/* stack navigation */
 
