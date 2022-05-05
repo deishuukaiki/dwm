@@ -130,6 +130,7 @@ static const char *browsercmd[] = { "qutebrowser", NULL };
 static const char *pulsemixercmd[] = { "kitty", "-o", "initial_window_height=480", "-o", "initial_window_width=640", "--class", "pulsemixer", "--title", "pulsemixer", "pulsemixer", NULL };
 static const char *qalccmd[] = { "kitty", "-o", "initial_window_height=480", "-o", "initial_window_width=640", "--class", "qalc", "--title", "qalc", "qalc" };
 
+#include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 
@@ -196,6 +197,8 @@ static Key keys[] = {
 
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
 	{ MODKEY,                       XK_space,  zoom,           {0} },
 
 	/* monitor navigation */
