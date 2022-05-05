@@ -193,6 +193,17 @@ static Key keys[] = {
 	{ MODKEY,                       XK_comma,  cyclelayout,    {.i = -1 } },
 	{ MODKEY,                       XK_period, cyclelayout,    {.i = +1 } },
 
+    /* floating moveresize */
+	{ MODKEY|ControlMask,                       XK_h,   moveresize,     {.v = "-50x 0y 0w 0h" } },
+  	{ MODKEY|ControlMask,                       XK_j,   moveresize,     {.v = "0x 50y 0w 0h" } },
+	{ MODKEY|ControlMask,                       XK_k,     moveresize,     {.v = "0x -50y 0w 0h" } },
+	{ MODKEY|ControlMask,                       XK_l,  moveresize,     {.v = "50x 0y 0w 0h" } },
+	{ MODKEY|ControlMask|ShiftMask,             XK_h,   moveresize,     {.v = "0x 0y -50w 0h" } },
+	{ MODKEY|ControlMask|ShiftMask,             XK_j,   moveresize,     {.v = "0x 0y 0w 50h" } },
+	{ MODKEY|ControlMask|ShiftMask,             XK_k,     moveresize,     {.v = "0x 0y 0w -50h" } },
+	{ MODKEY|ControlMask|ShiftMask,             XK_l,  moveresize,     {.v = "0x 0y 50w 0h" } },
+
+
 	/* stack navigation */
 
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
