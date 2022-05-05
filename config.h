@@ -181,7 +181,7 @@ static Key keys[] = {
 	/* TAGKEYS(                        XK_8,                      7) */
 	/* TAGKEYS(                        XK_9,                      8) */
 
-	/* cfacts, mfacts, gaps, bar */
+	/* cfacts, mfacts, gaps, bar, layouts */
 
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
@@ -189,6 +189,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
 	{ MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
 	{ MODKEY|ShiftMask,             XK_BackSpace,setcfact,     {.f =  0.00} },
+	{ MODKEY,                       XK_comma,  cyclelayout,    {.i = -1 } },
+	{ MODKEY,                       XK_period, cyclelayout,    {.i = +1 } },
 
 	/* stack navigation */
 
