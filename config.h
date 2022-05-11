@@ -126,7 +126,7 @@ static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "kitty", "-o", "initial_window_height=480", "-o", "initial_window_width=640", "--class", scratchpadname, "--title", scratchpadname, NULL };
 
 static const char *termcmd[]  = { "kitty", NULL };
-static const char *browsercmd[] = { "qutebrowser", NULL };
+static const char *browsercmd[] = { "firefox-bin", NULL };
 static const char *pulsemixercmd[] = { "kitty", "-o", "initial_window_height=480", "-o", "initial_window_width=640", "--class", "pulsemixer", "--title", "pulsemixer", "pulsemixer", NULL };
 static const char *qalccmd[] = { "kitty", "-o", "initial_window_height=480", "-o", "initial_window_width=640", "--class", "qalc", "--title", "qalc", "qalc" };
 
