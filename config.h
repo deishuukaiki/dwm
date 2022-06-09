@@ -23,10 +23,25 @@ static const char col_fg[]	= "#dcd7ba";
 static const char col_sel[]      = "#664d77";
 static const char col_border[]	    = "#755b93";
 static const char col_uborder[]	    = "#969896";
+/* static const char *colors[][3]      = { */
+/*                 fg         bg         border   */
+/* 	[SchemeNorm] = { col_fg, col_bg, col_uborder }, */
+/* 	[SchemeSel]  = { col_fg, col_sel,  col_border  }, */
+/* }; */
+static const char col_gray1[]       = "#222222";
+static const char col_gray2[]       = "#444444";
+static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray4[]       = "#eeeeee";
+static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_fg, col_bg, col_uborder },
-	[SchemeSel]  = { col_fg, col_sel,  col_border  },
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeStatus]  = { col_gray3, col_gray1,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
+	[SchemeTagsSel]  = { col_gray4, col_cyan,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
+    [SchemeTagsNorm]  = { col_gray3, col_gray1,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+    [SchemeInfoSel]  = { col_gray4, col_cyan,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
+    [SchemeInfoNorm]  = { col_gray3, col_gray1,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
 /* tagging */
@@ -108,7 +123,7 @@ static const MonitorRule monrules[] = {
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} }, 
+	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
@@ -139,13 +154,13 @@ static Key keys[] = {
 	{ 0,				XF86XK_MonBrightnessDown,	spawn,	SHCMD("xbacklight -dec 10")},
 
 	/* volume */
-	
+
 	{ 0,				XF86XK_AudioRaiseVolume,	spawn,	SHCMD("pulsemixer --change-volume +2; pkill -RTMIN+1 dwmblocks") },
 	{ 0,				XF86XK_AudioLowerVolume,	spawn,	SHCMD("pulsemixer --change-volume -2; pkill -RTMIN+1 dwmblocks") },
 	{ 0,				XF86XK_AudioMute,		spawn,	SHCMD("pulsemixer --toggle-mute; pkill -RTMIN+1 dwmblocks") },
 
 	/* run programs */
-  
+
 	{ MODKEY,                       XK_a,      spawn,          {.v = dmenutodocmd } },
 	{ MODKEY,                       XK_s,      spawn,          {.v = dmenuxmms2cmd } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
@@ -162,7 +177,7 @@ static Key keys[] = {
 	{ 0,				            XK_Print,  spawn,	   SHCMD("exec flameshot gui") },
 	{ MODKEY,			            XK_Print,  spawn,	   SHCMD("exec flameshot screen -p ~/downloads/ -c") },
 	{ MODKEY|ShiftMask,		        XK_Print,  spawn,	   SHCMD("exec flameshot full -p ~/downloads/ -c") },
-	
+
 	/* windows */
 
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
@@ -225,7 +240,7 @@ static Key keys[] = {
 	/* quit and restart */
 
 	{ MODKEY|ShiftMask,             XK_End,      quit,           {0} },
-	{ MODKEY|ControlMask, 		    XK_End,      quit,           {1} }, 
+	{ MODKEY|ControlMask, 		    XK_End,      quit,           {1} },
 	{ MODKEY,			            XK_End,	     spawn,	     SHCMD("slock") },
 };
 
